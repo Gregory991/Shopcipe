@@ -1,0 +1,7 @@
+packageName = "com.badvok.ingreed"
+
+sqldelight {
+    PersonDatabase {
+        packageName = "com.badvok.ingreed"
+    }
+}
