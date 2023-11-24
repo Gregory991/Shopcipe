@@ -1,7 +1,9 @@
 package com.badvok.ingreed.ui.shopping
 
-import androidx.lifecycle.ViewModelStore
 import com.badvok.ingreed.ui.base.BaseViewModel
+import com.badvok.ingreed.ui.shopping.events.ShoppingAction
+import com.badvok.ingreed.ui.shopping.events.ShoppingSideEffect
+import com.badvok.ingreed.ui.shopping.state.ShoppingState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,9 +26,9 @@ class ShoppingViewModel : BaseViewModel<ShoppingState, ShoppingAction, ShoppingS
 
     override fun observeSideEffect(): Flow<ShoppingSideEffect> = sideEffect
 
-    override fun dispatch(action: ShoppingSideEffect) {
+    override fun dispatch(action: ShoppingAction) {
         when(action){
-            ShoppingSideEffect.Error -> TODO()
+            is ShoppingAction.CheckShoppingItem -> TODO()
         }
     }
 

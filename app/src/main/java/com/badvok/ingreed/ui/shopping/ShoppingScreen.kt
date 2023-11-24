@@ -15,9 +15,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.badvok.ingreed.ui.shopping.state.ShoppingState
 import com.badvok.ingreed.ui.theme.IngreedTheme
 import com.badvok.ingreed.ui.theme.PreviewVariants
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @Composable
 fun ShoppingScreen(

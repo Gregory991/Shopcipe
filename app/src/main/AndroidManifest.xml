@@ -4,7 +4,7 @@
     package="com.badvok.ingreed">
 
     <application
-        android:name=".base.IngredApplication"
+        android:name=".base.ShopcipeApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

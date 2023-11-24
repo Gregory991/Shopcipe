@@ -1,6 +1,7 @@
 package com.badvok.ingreed
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,33 +13,80 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
+import com.badvok.ingreed.base.appModule
+import com.badvok.ingreed.ui.recipe.RecipeScreen
+import com.badvok.ingreed.ui.recipe.RecipeViewModel
 import com.badvok.ingreed.ui.shopping.ShoppingScreen
 import com.badvok.ingreed.ui.shopping.ShoppingViewModel
 import com.badvok.ingreed.ui.theme.IngreedTheme
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
+import org.koin.androidx.compose.koinViewModel
+import org.koin.compose.KoinApplication
+import org.koin.compose.koinInject
+
+//import org.koin.java.KoinJavaComponent.get
+
+//import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("pxx", "create")
         super.onCreate(savedInstanceState)
         setContent {
-            IngreedTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    val viewModel: ShoppingViewModel by inject()
-                    LaunchedEffect(Unit) {
-                        viewModel.init()
+            App{
+                IngreedTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+//                        val myService = get<ShoppingViewModel>()
+//                        val recipeViewModel = koinInject<RecipeViewModel>()
+//                        val viewModel: ShoppingViewModel by inject()
+//                        Log.d("pxx", "RVM: $recipeViewModel")
+//                        Log.d("pxx", "SVM: $viewModel")
+//                        LaunchedEffect(Unit) {
+//                            viewModel.init()
+//                        }
+//                        val state = viewModel.observeState().collectAsState().value
+//                        ShoppingScreen(state)
+                        SetupRecipeScreen()
                     }
-                    val state = viewModel.observeState().collectAsState().value
-                    ShoppingScreen(state)
                 }
             }
+
         }
     }
+}
+
+@Composable
+fun App(content: @Composable () -> Unit) {
+    KoinApplication(application = {
+        // Koin configuration here
+        // TODO we add the appModules twice, once in application class an once here.
+        modules(appModule)
+    }) {
+        content()
+    }
+}
+
+@Composable
+fun SetupShoppingScreen(viewModel: ShoppingViewModel = koinInject()){
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
+    val state = viewModel.observeState().collectAsState().value
+    ShoppingScreen(state)
+}
+
+@Composable
+fun SetupRecipeScreen(viewModel: RecipeViewModel = koinInject()){
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
+    val state = viewModel.observeState().collectAsState().value
+    RecipeScreen(state)
 }
 
 @Composable

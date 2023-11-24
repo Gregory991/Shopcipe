@@ -3,7 +3,6 @@ package com.badvok.ingreed.database.recipe
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.badvok.ingreed.database.Ingredient
 
 @Entity
 class RecipeEntity(

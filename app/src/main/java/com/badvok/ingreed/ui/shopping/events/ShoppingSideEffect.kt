@@ -1,4 +1,4 @@
-package com.badvok.ingreed.ui.shopping
+package com.badvok.ingreed.ui.shopping.events
 
 import com.badvok.ingreed.ui.base.Effect
 

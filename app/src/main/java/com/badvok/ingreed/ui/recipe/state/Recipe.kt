@@ -1,10 +1,11 @@
-package com.badvok.ingreed.database
+package com.badvok.ingreed.ui.recipe.state
 
 data class Recipe(
     val name: String,
     val book: String,
     val page: Int,
-    val ingredients: List<Ingredient>
+    val ingredients: List<Ingredient>,
+    val healthRating: Int = 0,
 )
 
 data class Ingredient(
@@ -13,8 +14,8 @@ data class Ingredient(
 )
 
 
-fun createMockRecipes() {
-    listOf(
+fun createMockRecipes() :List<Recipe>{
+   return listOf(
         Recipe(
             "Halloumi burger",
             "joe wicks blue",
