@@ -1,4 +1,7 @@
 package com.badvok.ingreed.database.recipieIngredient
 
-class RecipeIngredientDao {
+import androidx.room.Dao
+
+@Dao
+interface RecipeIngredientDao {
 }

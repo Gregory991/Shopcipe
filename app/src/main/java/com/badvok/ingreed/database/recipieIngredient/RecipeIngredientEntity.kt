@@ -10,4 +10,6 @@ class RecipeIngredientEntity(
     val recipeId : Long,
     @ColumnInfo(name = "ingredient_id")
     val ingredientId : Long,
+    @ColumnInfo(name = "quantity")
+    val quantity: Int,
 )

@@ -2,6 +2,7 @@ package com.badvok.ingreed.base
 
 import androidx.room.Room
 import com.badvok.ingreed.database.ShopcipeDatabase
+import com.badvok.ingreed.database.ShoppingRepository
 import com.badvok.ingreed.ui.screens.recipe.RecipeViewModel
 import com.badvok.ingreed.ui.screens.shopping.ShoppingViewModel
 import org.koin.android.ext.koin.androidApplication
@@ -15,4 +16,5 @@ val  appModule = module {
         ShopcipeDatabase::class.java,
         "shopcipe_database"
     ).build()}
+    single { ShoppingRepository() }
 }

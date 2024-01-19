@@ -10,6 +10,4 @@ class IngredientEntity(
     val id : Long,
     @ColumnInfo(name = "name")
     val name: String,
-    @ColumnInfo(name = "quantity")
-    val quantity: Int,
 )
