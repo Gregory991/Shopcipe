@@ -1,4 +1,4 @@
-package com.badvok.ingreed.ui.recipe.events
+package com.badvok.ingreed.ui.screens.recipe.events
 
 import com.badvok.ingreed.ui.base.Action
 

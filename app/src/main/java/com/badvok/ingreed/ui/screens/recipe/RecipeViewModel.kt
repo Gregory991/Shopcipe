@@ -1,10 +1,10 @@
-package com.badvok.ingreed.ui.recipe
+package com.badvok.ingreed.ui.screens.recipe
 
 import com.badvok.ingreed.ui.base.BaseViewModel
-import com.badvok.ingreed.ui.recipe.events.RecipeAction
-import com.badvok.ingreed.ui.recipe.events.RecipeSideEffect
-import com.badvok.ingreed.ui.recipe.state.RecipeState
-import com.badvok.ingreed.ui.recipe.state.createMockRecipes
+import com.badvok.ingreed.ui.screens.recipe.events.RecipeAction
+import com.badvok.ingreed.ui.screens.recipe.events.RecipeSideEffect
+import com.badvok.ingreed.ui.screens.recipe.state.RecipeState
+import com.badvok.ingreed.ui.screens.recipe.state.createMockRecipes
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

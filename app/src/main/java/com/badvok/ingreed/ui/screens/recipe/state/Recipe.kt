@@ -1,4 +1,4 @@
-package com.badvok.ingreed.ui.recipe.state
+package com.badvok.ingreed.ui.screens.recipe.state
 
 data class Recipe(
     val name: String,

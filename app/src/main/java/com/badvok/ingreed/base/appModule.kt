@@ -2,8 +2,8 @@ package com.badvok.ingreed.base
 
 import androidx.room.Room
 import com.badvok.ingreed.database.ShopcipeDatabase
-import com.badvok.ingreed.ui.recipe.RecipeViewModel
-import com.badvok.ingreed.ui.shopping.ShoppingViewModel
+import com.badvok.ingreed.ui.screens.recipe.RecipeViewModel
+import com.badvok.ingreed.ui.screens.shopping.ShoppingViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

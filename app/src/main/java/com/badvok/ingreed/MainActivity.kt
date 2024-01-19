@@ -14,14 +14,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.badvok.ingreed.base.appModule
-import com.badvok.ingreed.ui.recipe.RecipeScreen
-import com.badvok.ingreed.ui.recipe.RecipeViewModel
-import com.badvok.ingreed.ui.shopping.ShoppingScreen
-import com.badvok.ingreed.ui.shopping.ShoppingViewModel
-import com.badvok.ingreed.ui.theme.IngreedTheme
-import kotlinx.coroutines.flow.collect
-import org.koin.android.ext.android.inject
-import org.koin.androidx.compose.koinViewModel
+import com.badvok.ingreed.ui.screens.recipe.RecipeScreen
+import com.badvok.ingreed.ui.screens.recipe.RecipeViewModel
+import com.badvok.ingreed.ui.screens.shopping.ShoppingScreen
+import com.badvok.ingreed.ui.screens.shopping.ShoppingViewModel
+import com.badvok.ingreed.ui.theme.ShopcipeTheme
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
 
@@ -35,7 +32,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             App{
-                IngreedTheme {
+                ShopcipeTheme {
                     // A surface container using the 'background' color from the theme
                     Surface(
                         modifier = Modifier.fillMaxSize(),
@@ -51,6 +48,7 @@ class MainActivity : ComponentActivity() {
 //                        }
 //                        val state = viewModel.observeState().collectAsState().value
 //                        ShoppingScreen(state)
+                        SetupShoppingScreen()
                         SetupRecipeScreen()
                     }
                 }
@@ -97,7 +95,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    IngreedTheme {
+    ShopcipeTheme {
         Greeting("Android")
     }
 }
