@@ -16,5 +16,5 @@ val  appModule = module {
         ShopcipeDatabase::class.java,
         "shopcipe_database"
     ).build()}
-    single { ShoppingRepository() }
+    single { ShoppingRepository(get()) }
 }
