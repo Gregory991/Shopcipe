@@ -4,10 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "recipe")
 class RecipeEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "recipe_id")
+    @ColumnInfo(name = "id")
     val id: Long,
     @ColumnInfo(name = "name")
     val name: String,

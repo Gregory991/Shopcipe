@@ -2,20 +2,34 @@ package com.badvok.ingreed.database.shoppingIngredient
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.badvok.ingreed.database.recipieIngredient.RecipeIngredientEntity
+import com.badvok.ingreed.database.shopping.ShoppingEntity
 
-@Entity (primaryKeys = ["shopping_id", "ingredient_id"])
+@Entity(tableName = "shopping_ingredient",
+    primaryKeys = ["shopping_id", "recipe_ingredient_id"],
+    foreignKeys = [
+        ForeignKey(
+            entity = ShoppingEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["shopping_id"],
+            onDelete = ForeignKey.CASCADE
+        ),
+        ForeignKey(
+            entity = RecipeIngredientEntity::class,
+            parentColumns = ["recipe_id", "ingredient_id"],
+            childColumns = ["recipe_id", "ingredient_id"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
 class ShoppingIngredientEntity(
-//    @PrimaryKey(autoGenerate = true)
-//    @ColumnInfo(name = "shopping_ingredient_id")
-//    val id: Long,
     @ColumnInfo(name = "shopping_id")
     val shoppingId: Long,
-    @ColumnInfo(name = "ingredient_id")
-    val ingredientId: Long,
-    @ColumnInfo(name = "recipe_id")
-    val recipeId: Long,
-    @ColumnInfo(name = "quantity") // Serves to express when recipe need multiples.
-    val quantity: Int,
+    @ColumnInfo(name = "recipe_ingredient_id")
+    val recipeIngredientId: Long,
+//    @ColumnInfo(name = "quantity") // Serves to express when recipe need multiples.
+//    val quantity: Int,
 
 )

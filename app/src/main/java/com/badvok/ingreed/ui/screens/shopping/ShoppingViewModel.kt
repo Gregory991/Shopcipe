@@ -1,5 +1,6 @@
 package com.badvok.ingreed.ui.screens.shopping
 
+import com.badvok.ingreed.database.ShoppingRepository
 import com.badvok.ingreed.ui.base.BaseViewModel
 import com.badvok.ingreed.ui.screens.recipe.state.Ingredient
 import com.badvok.ingreed.ui.screens.shopping.events.ShoppingAction
@@ -12,12 +13,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
 
-class ShoppingViewModel : BaseViewModel<ShoppingState, ShoppingAction, ShoppingSideEffect> {
+class ShoppingViewModel(val shoppingRepository: ShoppingRepository) : BaseViewModel<ShoppingState, ShoppingAction, ShoppingSideEffect> {
 
     private val state = MutableStateFlow(ShoppingState())
     private val sideEffect = MutableSharedFlow<ShoppingSideEffect>()
 
     fun init() {
+
         state.update {
             it.copy(
                 shoppingList = listOf(
