@@ -13,7 +13,9 @@ class ShoppingIngredientEntity(
     val shoppingId: Long,
     @ColumnInfo(name = "ingredient_id")
     val ingredientId: Long,
-    @ColumnInfo(name = "quantity")
+    @ColumnInfo(name = "recipe_id")
+    val recipeId: Long,
+    @ColumnInfo(name = "quantity") // Serves to express when recipe need multiples.
     val quantity: Int,
 
 )
