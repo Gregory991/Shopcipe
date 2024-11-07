@@ -9,6 +9,8 @@ class ShopcipeApplication : Application() {
     // commit 1 cat
     // commit 2 cat
     // cat 2.5
+    // commit 3 cat
+    // commit 4 cat
 
     override fun onCreate() {
         super.onCreate()
