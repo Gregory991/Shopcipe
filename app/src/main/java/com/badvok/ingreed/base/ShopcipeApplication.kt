@@ -6,6 +6,7 @@ import org.koin.core.context.GlobalContext.startKoin
 
 class ShopcipeApplication : Application() {
 
+    // cat 2.5
 
     override fun onCreate() {
         super.onCreate()
