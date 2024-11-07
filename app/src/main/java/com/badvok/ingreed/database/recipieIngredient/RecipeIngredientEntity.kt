@@ -7,7 +7,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.badvok.ingreed.database.ingredient.IngredientEntity
 import com.badvok.ingreed.database.recipe.RecipeEntity
-
+// 1 test
 //@Entity(primaryKeys = ["recipe_id", "ingredient_id"])
 @Entity(tableName = "recipe_ingredient",
     primaryKeys = ["recipe_id", "ingredient_id"],
